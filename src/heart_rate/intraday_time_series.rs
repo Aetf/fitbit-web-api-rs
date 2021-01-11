@@ -5,7 +5,7 @@ use std::fmt;
 use crate::UserId;
 
 use chrono::naive::{NaiveDate, NaiveTime};
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use url::Url;
 
 /// Build the URL for today.

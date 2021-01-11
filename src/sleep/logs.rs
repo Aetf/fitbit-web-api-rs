@@ -3,7 +3,7 @@
 //! [More information?](https//dev.fitbit.com/build/reference/web-api/sleep/#get-sleep-logs)
 
 use chrono::naive::NaiveDate;
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use url::Url;
 
 /// Generate the request URL from a single date.

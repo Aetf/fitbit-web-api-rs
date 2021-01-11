@@ -3,7 +3,7 @@
 use std::fmt;
 
 use chrono::naive::NaiveDate;
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use url::Url;
 
 /// Generate the request URL from a date.

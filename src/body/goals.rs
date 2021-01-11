@@ -1,7 +1,7 @@
 //! Body weight and fat goals
 
 use chrono::naive::NaiveDate;
-use serde_derive::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct WeightGoalContainer {

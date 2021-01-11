@@ -1,7 +1,7 @@
 //! Body fat logs
 
 use chrono::naive::{NaiveDate, NaiveTime};
-use serde_derive::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

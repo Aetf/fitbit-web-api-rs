@@ -15,7 +15,7 @@ use std::fmt;
 use crate::UserId;
 
 use chrono::naive::NaiveDateTime;
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use url::Url;
 
 /// The URL for this endpoint.

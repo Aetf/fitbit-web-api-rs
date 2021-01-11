@@ -1,6 +1,6 @@
 //! Heart rate data APIs
 
-use serde_derive::Deserialize;
+use serde::Deserialize;
 
 pub mod intraday_time_series;
 pub mod time_series;

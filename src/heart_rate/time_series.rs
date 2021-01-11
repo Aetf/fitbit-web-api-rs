@@ -5,7 +5,7 @@ use std::fmt;
 use crate::UserId;
 
 use chrono::naive::NaiveDate;
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use url::Url;
 
 /// Possible period ranges for heart rate data.

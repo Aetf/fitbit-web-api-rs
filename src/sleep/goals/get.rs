@@ -2,7 +2,7 @@
 
 use std::fmt;
 
-use serde_derive::Deserialize;
+use serde::Deserialize;
 
 /// Get sleep goals response.
 #[derive(Deserialize, Debug)]

@@ -1,7 +1,7 @@
 //! Weight logging API
 
 use chrono::naive::{NaiveDate, NaiveTime};
-use serde_derive::Deserialize;
+use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct GetWeightLogsResponse {

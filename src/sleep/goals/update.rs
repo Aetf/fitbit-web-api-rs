@@ -1,6 +1,6 @@
 //! Update sleep goals.
 
-use serde_derive::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize};
 
 /// Sleep goal update request.
 #[derive(Serialize, Debug)]

@@ -3,7 +3,7 @@
 use crate::{Period, UserId};
 
 use chrono::naive::NaiveDate;
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use strum_macros::*;
 use url::Url;
 
@@ -58,7 +58,7 @@ macro_rules! endpoint {
         pub mod $mod {
             use std::fmt;
 
-            use serde_derive::Deserialize;
+            use serde::Deserialize;
 
             #[derive(Deserialize, Debug)]
             pub struct Response {

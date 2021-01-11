@@ -3,7 +3,7 @@
 use crate::UserId;
 
 use chrono::DateTime;
-use serde_derive::Deserialize;
+use serde::Deserialize;
 use url::Url;
 
 pub mod get;

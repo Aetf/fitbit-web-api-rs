@@ -2,7 +2,7 @@
 
 use std::fmt;
 
-use serde_derive::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize};
 use url::Url;
 
 /// Generate a goals endpoint URL for the current user's daily goals

@@ -1,7 +1,7 @@
 //! Update a profile for a user.
 
 use chrono::naive::NaiveDate;
-use serde_derive::Serialize;
+use serde::Serialize;
 
 /// Possible user profile options to change.
 #[derive(Serialize, Debug)]
