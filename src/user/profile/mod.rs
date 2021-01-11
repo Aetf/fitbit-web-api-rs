@@ -7,6 +7,7 @@ use crate::UserId;
 use chrono::naive::NaiveDate;
 use serde::{Deserialize, Serialize};
 use url::Url;
+use chrono_tz::Tz;
 
 pub mod update;
 
@@ -76,7 +77,7 @@ pub struct User {
     pub stride_length_walking: f32,
     pub stride_length_walking_type: String,
     pub swim_unit: SwimUnit,
-    pub timezone: String,
+    pub timezone: Tz,
     pub water_unit: WaterUnit,
     pub water_unit_name: String,
     pub weight: f32,
