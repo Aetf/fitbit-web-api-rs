@@ -5,12 +5,12 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct LogFatResponse {
+pub struct PutResponse {
     pub weight_log: FatLogWithBmi,
 }
 
 #[derive(Debug, Deserialize)]
-pub struct GetFatLogsResponse {
+pub struct GetResponse {
     pub fat: Vec<FatLog>,
 }
 
@@ -52,7 +52,7 @@ mod tests {
         "#;
         let expected = expected.replace(" ", "").replace("\n", "");
 
-        let response = LogFatResponse {
+        let response = PutResponse {
             weight_log: FatLogWithBmi {
                 bmi: 23.57,
                 entry: FatLog {
@@ -92,6 +92,6 @@ mod tests {
 }
         "#;
 
-        let _res: GetFatLogsResponse = serde_json::from_str(data).unwrap();
+        let _res: GetResponse = serde_json::from_str(data).unwrap();
     }
 }

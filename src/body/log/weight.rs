@@ -6,13 +6,13 @@ use serde::Deserialize;
 use crate::UserId;
 
 #[derive(Debug, Deserialize)]
-pub struct GetWeightLogsResponse {
+pub struct GetResponse {
     pub weight: Vec<WeightLog>,
 }
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct LogWeightResponse {
+pub struct PutResponse {
     pub weight_log: Vec<WeightLog>,
 }
 
@@ -56,7 +56,7 @@ mod tests {
 }
         "#;
 
-        let _res: GetWeightLogsResponse = serde_json::from_str(data).unwrap();
+        let _res: GetResponse = serde_json::from_str(data).unwrap();
     }
 
     #[test]
@@ -76,6 +76,6 @@ mod tests {
 }
         "#;
 
-        let _res: LogWeightResponse = serde_json::from_str(data).unwrap();
+        let _res: PutResponse = serde_json::from_str(data).unwrap();
     }
 }
