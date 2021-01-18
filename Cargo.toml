@@ -36,4 +36,3 @@ client = ["clap", "log", "oauth2", "opener", "pretty_env_logger", "reqwest", "to
 [[bin]]
 name = "fitbit-web-api"
 required-features = ["client"]
-

@@ -3,18 +3,20 @@
 use chrono::naive::{NaiveDate, NaiveTime};
 use serde::Deserialize;
 
-#[derive(Deserialize)]
+use crate::UserId;
+
+#[derive(Debug, Deserialize)]
 pub struct GetWeightLogsResponse {
     pub weight: Vec<WeightLog>,
 }
 
-#[derive(Deserialize)]
+#[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct LogWeightResponse {
     pub weight_log: Vec<WeightLog>,
 }
 
-#[derive(Deserialize)]
+#[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct WeightLog {
     pub bmi: f32,

@@ -5,31 +5,31 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Request {
-    pub weight_log: FatLog,
+pub struct LogFatResponse {
+    pub weight_log: FatLogWithBmi,
 }
 
-#[derive(Deserialize)]
-pub struct Response {
-    pub fat: Vec<Entry>,
+#[derive(Debug, Deserialize)]
+pub struct GetFatLogsResponse {
+    pub fat: Vec<FatLog>,
 }
 
-#[derive(Serialize)]
-pub struct FatLog {
-    /// Body mass index
-    pub bmi: f32,
-    #[serde(flatten)]
-    pub entry: Entry,
-}
-
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Entry {
+pub struct FatLog {
     pub date: NaiveDate,
     pub fat: f32,
     pub log_id: usize,
     pub time: NaiveTime,
     pub source: String, // TODO: Device enum
+}
+
+#[derive(Debug, Serialize)]
+pub struct FatLogWithBmi {
+    /// Body mass index
+    pub bmi: f32,
+    #[serde(flatten)]
+    pub entry: FatLog,
 }
 
 #[cfg(test)]
@@ -52,10 +52,10 @@ mod tests {
         "#;
         let expected = expected.replace(" ", "").replace("\n", "");
 
-        let request = Request {
-            weight_log: FatLog {
+        let response = LogFatResponse {
+            weight_log: FatLogWithBmi {
                 bmi: 23.57,
-                entry: Entry {
+                entry: FatLog {
                     date: NaiveDate::from_ymd(2012, 3, 5),
                     fat: 14.5,
                     log_id: 1330991999000,
@@ -65,7 +65,7 @@ mod tests {
             },
         };
 
-        let json = serde_json::to_string(&request).unwrap();
+        let json = serde_json::to_string(&response).unwrap();
         assert_eq!(expected, json);
     }
 
@@ -92,6 +92,6 @@ mod tests {
 }
         "#;
 
-        let _res: Response = serde_json::from_str(data).unwrap();
+        let _res: GetFatLogsResponse = serde_json::from_str(data).unwrap();
     }
 }
