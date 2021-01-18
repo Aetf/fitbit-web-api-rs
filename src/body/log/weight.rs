@@ -3,8 +3,6 @@
 use chrono::naive::{NaiveDate, NaiveTime};
 use serde::Deserialize;
 
-use crate::UserId;
-
 #[derive(Debug, Deserialize)]
 pub struct GetResponse {
     pub weight: Vec<WeightLog>,

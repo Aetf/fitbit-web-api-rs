@@ -1,8 +1,7 @@
-use chrono::{NaiveDate, NaiveTime};
+use chrono::NaiveDate;
 use strum_macros::*;
 use url::Url;
 
-use crate::body::log::weight::WeightLog;
 use crate::UserId;
 
 pub mod fat;
